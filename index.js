@@ -69,7 +69,7 @@ window.callSearchApi('items.json', 'POST', (err, json) => {
           let categories = item.categories
           if (Array.isArray(categories) && (categories.length > 0)) {
             categories.forEach(cat => {
-              return result += `,${cat.slug}`
+              return result += `-${cat.slug}`
             })
           } 
           return result
@@ -85,7 +85,7 @@ window.callSearchApi('items.json', 'POST', (err, json) => {
               "ad_relevance": Number(item.ad_relevance)
               //"quantity": Number(item.quantity)
               }
-              allProducts.push(JSON.stringify(product))
+              allProducts.push(product)
       }
     })
     console.dir(allProducts, { maxArrayLength: null }) 
